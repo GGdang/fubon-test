@@ -1,55 +1,51 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+  <v-app class="fubon-test">
+    <v-img sizes="" src="@/assets/img/image_background.svg">
+      <template v-slot:defaut>
+        <div>
+          <v-app-bar app color="agba(0,0,0,0)" fixed elevation="0">
+            <v-container class="d-flex justify-space-between">
+              <h1 class="font-weight-light">HOTEL</h1>
+              <div>
+                <v-btn
+                  class="font-weight-thin"
+                  text
+                  v-for="n in menuList"
+                  :key="n"
+                >
+                  {{ n }}
+                </v-btn>
+              </div>
+              <v-btn width="170" height="48" outlined rounded color="white">
+                SIGN UP
+              </v-btn>
+            </v-container>
+          </v-app-bar>
+        </div>
+      </template>
+    </v-img>
 
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
-    //
+    menuList: ["About", "Service", "Rooms", "Blog", "Contact"],
   }),
 };
 </script>
+<style lang="scss">
+.fubon-test {
+  font-family: adobe-heiti-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+}
+</style>
