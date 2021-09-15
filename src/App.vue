@@ -8,14 +8,14 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({}),
-}
+};
 </script>
 <style lang="scss">
 .fubon-test {
-  font-family: adobe-heiti-std, sans-serif;
+  font-family: adobe-heiti-std, sans-serif !important;
   font-weight: 400;
   font-style: normal;
 }

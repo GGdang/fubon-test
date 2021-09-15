@@ -1,0 +1,225 @@
+// 視窗大小
+@mixin container {
+  @media (min-width: 1440px) {
+    max-width: 1110px;
+    margin-right: auto;
+    margin-left: auto;
+    @content;
+  }
+  @media (min-width: 768px) {
+    // max-width: 1110px;
+    // margin-right: auto;
+    // margin-left: auto;
+    @content;
+  }
+  @media (min-width: 576px) {
+    // max-width: 1110px;
+    // margin-right: auto;
+    // margin-left: auto;
+    @content;
+  }
+}
+
+@mixin dai_vuetify_xl {
+  @media (max-width: 1904px) {
+    @content;
+  }
+}
+
+@mixin dai_vuetify_lg {
+  @media (max-width: 1264px) {
+    @content;
+  }
+}
+
+@mixin dai_vuetify_md {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin dai_vuetify_sm {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin dai_max($_w) {
+  @media (max-width: $_w + "px") {
+    @content;
+  }
+}
+
+@mixin dai_min($_w) {
+  @media (min-width: $_w + "px") {
+    @content;
+  }
+}
+
+@mixin dai_1920 {
+  @media (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin dai_1600 {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin dai_1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin dai_1280 {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin dai_1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin dai_1024 {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin dai_992 {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin dai_860 {
+  @media (max-width: 860px) {
+    @content;
+  }
+}
+
+@mixin dai_768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin dai_576 {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin dai_425 {
+  @media (max-width: 425px) {
+    @content;
+  }
+}
+
+@mixin dai_414 {
+  @media (max-width: 414px) {
+    @content;
+  }
+}
+
+@mixin dai_375 {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin dai_320 {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin dai_min_1920 {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin dai_min_1600 {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin dai_min_1440 {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin dai_min_1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin dai_min_1200 {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin dai_min_1024 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin dai_min_992 {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin dai_min_860 {
+  @media (min-width: 860px) {
+    @content;
+  }
+}
+
+@mixin dai_min_768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin dai_min_576 {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin dai_min_425 {
+  @media (min-width: 425px) {
+    @content;
+  }
+}
+
+@mixin dai_min_414 {
+  @media (min-width: 414px) {
+    @content;
+  }
+}
+
+@mixin dai_min_375 {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin dai_min_320 {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
