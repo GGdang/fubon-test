@@ -14,9 +14,11 @@
               {{ n }}
             </v-btn>
           </div>
-          <v-btn width="170" height="48" outlined rounded color="white">
-            SIGN UP
-          </v-btn>
+          <div class="sign-up">
+            <v-btn width="100%" height="100%" outlined rounded color="white">
+              SIGN UP
+            </v-btn>
+          </div>
         </div>
         <div class="header-body">
           <h2 class="b-title white--text">Exclusive Boutique Hotel</h2>
@@ -197,7 +199,6 @@
     </footer>
   </div>
 </template>
-
 <script>
 export default {
   name: 'Home',
@@ -304,6 +305,10 @@ export default {
       margin-bottom: 45px;
       font-size: 20px;
       font-weight: 300;
+    }
+    .sign-up {
+      width: 170px;
+      height: 48px;
     }
   }
   .header-check-box {
