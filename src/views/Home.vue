@@ -314,6 +314,7 @@ export default {
 .header {
   background-image: url("../assets/img/image_background.svg");
   background-size: cover;
+  background-position: center center;
   @include dai_vuetify_md {
     height: 880px;
   }
@@ -324,6 +325,9 @@ export default {
   .sign-up-btn {
     width: 170px;
     height: 48px;
+    @include dai_vuetify_sm {
+      width: 138px;
+    }
   }
   .check-box {
     @include dai_vuetify_md {
