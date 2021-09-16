@@ -2,9 +2,9 @@
   <div>
     <header class="header">
       <v-container>
-        <div class="d-flex justify-space-between">
+        <div class="d-flex justify-md-space-between">
           <h1 class="h-title white--text">HOTEL</h1>
-          <div>
+          <div class="d-md-block d-none">
             <v-btn
               class="font-weight-thin white--text"
               text
@@ -14,7 +14,10 @@
               {{ n }}
             </v-btn>
           </div>
-          <div class="sign-up-btn">
+          <div class="d-black d-md-none order-3">
+            <img src="../assets/img/button_menu.svg" alt="button_menu" />
+          </div>
+          <div class="sign-up-btn order-2 mr-3 mr-md-0 ml-auto ml-md-0">
             <v-btn
               width="100%"
               height="100%"
@@ -47,12 +50,16 @@
           <v-col
             class="d-flex pa-0 justify-space-between"
             cols="12"
+            sm="6"
             md="3"
             v-for="(n, key) in houseCheck"
             :key="key"
           >
-            <div class="pt-7 pb-4 pl-8 pr-0">
-              <p class="size-14">
+            <div
+              class="pt-6 pb-3 pt-md-7 pb-md-4 pl-8 pr-0 check-in-box"
+              :class="key"
+            >
+              <p class="size-14 mb-0 mb-md-4">
                 {{ key.toUpperCase() }}
               </p>
               <div class="d-flex align-center">
@@ -77,7 +84,6 @@
                 </div>
               </div>
             </div>
-            <v-divider color="#21364E" vertical></v-divider>
           </v-col>
           <v-col class="pa-0" cols="12" md="3">
             <div class="d-flex h-100">
@@ -87,8 +93,17 @@
                 v-for="(n, key) in people"
                 :key="key"
               >
-                <div class="pt-7 people-set d-flex align-center flex-column">
-                  <p class="size-14">{{ key.toUpperCase() }}</p>
+                <div
+                  class="
+                    pt-6 pt-md-7
+                    pb-4
+                    people-set
+                    d-flex
+                    align-center
+                    flex-column
+                  "
+                >
+                  <p class="size-14 mb-0 mb-md-2">{{ key.toUpperCase() }}</p>
                   <div class="people-num">
                     <img
                       class="mr-4 cursor-pointer"
@@ -106,7 +121,11 @@
               </div>
             </div>
           </v-col>
-          <v-col class="d-flex justify-center align-center" cols="12" md="3">
+          <v-col
+            class="d-flex justify-center align-center py-12 py-md-3 check-box"
+            cols="12"
+            md="3"
+          >
             <div class="check-btn">
               <v-btn width="100%" rounded height="100%" color="#C8FF8C">
                 CHECK AVAILABILITY
@@ -124,8 +143,8 @@
     <main class="body">
       <v-container>
         <v-row no-gutters class="align-center">
-          <v-col cols="6">
-            <div class="size-56">
+          <v-col class="description" cols="12" sm="6">
+            <div class="size-56 size-md-40">
               <p class="mb-0 grey-1">Luxury Plaza</p>
               <p class="mb-0 grey-1">Hotel for You</p>
             </div>
@@ -146,8 +165,8 @@
               ABOUT US
             </v-btn>
           </v-col>
-          <v-col class="pa-0 hotel-vedio" cols="6">
-            <img src="../assets/img/image_item.svg" alt="image_item" />
+          <v-col class="pa-0 hotel-vedio" cols="12" sm="6">
+            <!-- <img src="../assets/img/image_item.svg" alt="image_item" /> -->
             <div class="vedio-play-box d-flex pa-8 align-center">
               <img
                 class="mr-4 cursor-pointer"
@@ -281,6 +300,11 @@ export default {
 .size-56 {
   font-size: 56px;
 }
+.size-md-40 {
+  @include dai_vuetify_md {
+    font-size: 40px;
+  }
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -290,6 +314,9 @@ export default {
 .header {
   background-image: url("../assets/img/image_background.svg");
   background-size: cover;
+  @include dai_vuetify_md {
+    height: 880px;
+  }
   .h-title {
     font-size: 40px;
     font-weight: 400;
@@ -298,6 +325,11 @@ export default {
     width: 170px;
     height: 48px;
   }
+  .check-box {
+    @include dai_vuetify_md {
+      border-top: 1px #21364e solid;
+    }
+  }
   .check-btn {
     width: 226px;
     height: 48px;
@@ -305,12 +337,23 @@ export default {
   .header-body {
     margin-top: 156px;
     margin-bottom: 64px;
+    @include dai_vuetify_md {
+      margin-top: 56px;
+      margin-bottom: 48px;
+    }
     .b-title {
       width: 329px;
       font-size: 72px;
-      font-weight: 300;
       line-height: 80px;
       margin-bottom: 21px;
+      @include dai_vuetify_md {
+        font-size: 64px;
+        line-height: 72px;
+      }
+      @include dai_vuetify_sm {
+        font-size: 56px;
+        line-height: 64px;
+      }
     }
     .b-sub-title {
       margin-bottom: 45px;
@@ -324,6 +367,21 @@ export default {
     box-shadow: 10px 10px 20px #00000019;
     border-radius: 15px;
     margin-bottom: 80px;
+    @include dai_vuetify_md {
+      bottom: -10px;
+      margin-bottom: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .check-in-box {
+      width: 100%;
+      border-right: 1px #21364e solid;
+      @include dai_vuetify_sm {
+        &.departure {
+          border-top: 1px #21364e solid;
+        }
+      }
+    }
     .date-time {
       position: relative;
       img[alt="button_onlyDropDown"] {
@@ -336,11 +394,16 @@ export default {
       left: 50%;
       bottom: -24px;
       transform: translateX(-50%);
+      border-radius: 50%;
+      box-shadow: 10px 10px 20px #0000001a;
     }
     .people-box {
       width: 50%;
       height: 100%;
       border-right: 1px #21364e solid;
+      @include dai_vuetify_md {
+        border-top: 1px #21364e solid;
+      }
       .people-set {
         width: 100%;
       }
@@ -359,20 +422,47 @@ export default {
   background-color: #edf1f5;
   padding-top: 144px;
   padding-bottom: 176px;
+  @include dai_vuetify_md {
+    padding-top: 300px;
+  }
+  @include dai_vuetify_sm {
+    padding-top: 360px;
+    padding-bottom: 153px;
+  }
+  .description {
+    @include dai_vuetify_sm {
+      margin-bottom: 80px;
+    }
+  }
   .hotel-vedio {
     position: relative;
     height: 570px;
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 30px;
+    background-image: url("../assets/img/image_item.svg");
+    background-size: cover;
+    background-position: center center;
+    @include dai_vuetify_lg {
+      height: 430px;
+    }
+    @include dai_vuetify_sm {
+      height: 570px;
+      // overflow: initial;
+    }
     img[alt="image_item"] {
       height: auto;
       width: 100%;
+      @include dai_vuetify_sm {
+        height: 570px;
+        width: auto;
+      }
     }
     .vedio-play-box {
       width: 100%;
       position: absolute;
       background-color: white;
-      bottom: 0;
+      bottom: -1px;
+      border-radius: 0 0 30px 30px;
     }
   }
 }
