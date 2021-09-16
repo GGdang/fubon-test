@@ -14,9 +14,15 @@
               {{ n }}
             </v-btn>
           </div>
-          <div class="sign-up">
-            <v-btn width="100%" height="100%" outlined rounded color="white">
-              SIGN UP
+          <div class="sign-up-btn">
+            <v-btn
+              width="100%"
+              height="100%"
+              outlined
+              rounded
+              color="#FFFFFF4B"
+            >
+              <span class="white--text"> SIGN UP </span>
             </v-btn>
           </div>
         </div>
@@ -101,9 +107,11 @@
             </div>
           </v-col>
           <v-col class="d-flex justify-center align-center" cols="12" md="3">
-            <v-btn width="226" rounded height="48" color="#C8FF8C">
-              CHECK AVAILABILITY
-            </v-btn>
+            <div class="check-btn">
+              <v-btn width="100%" rounded height="100%" color="#C8FF8C">
+                CHECK AVAILABILITY
+              </v-btn>
+            </div>
           </v-col>
           <img
             class="cursor-pointer"
@@ -118,20 +126,14 @@
         <v-row no-gutters class="align-center">
           <v-col cols="6">
             <div class="size-56">
-              <p class="mb-0 grey-1">
-                Luxury Plaza
-              </p>
-              <p class="mb-0 grey-1">
-                Hotel for You
-              </p>
+              <p class="mb-0 grey-1">Luxury Plaza</p>
+              <p class="mb-0 grey-1">Hotel for You</p>
             </div>
             <div class="mt-2">
               <p class="mb-2 grey-2">
                 Distant orb has power to raise and purify our
               </p>
-              <p class="mb-2 grey-2">
-                thoughts like a strain of sacred music.
-              </p>
+              <p class="mb-2 grey-2">thoughts like a strain of sacred music.</p>
             </div>
             <v-btn
               class="mt-7"
@@ -153,9 +155,7 @@
                 alt="button_player"
               />
               <div>
-                <p class="mb-3 grey-1">
-                  Play video
-                </p>
+                <p class="mb-3 grey-1">Play video</p>
                 <p class="grey-2 mb-0">2:34</p>
               </div>
             </div>
@@ -166,13 +166,20 @@
     <footer>
       <v-container>
         <v-row>
-          <v-col cols="9">
-            <p class="white--text size-56 mb-0">
-              HOTEL
-            </p>
-            <div class="d-flex mt-7">
-              <div class="mr-7" v-for="(n, key) in contact" :key="key">
-                <img :src="n.img" :alt="`${key}-icon`" />
+          <v-col cols="12" sm="12" md="9">
+            <p class="white--text size-56 mb-0">HOTEL</p>
+            <div class="d-flex flex-column flex-sm-row mt-7">
+              <div
+                class="
+                  align-center
+                  mr-0 mr-sm-7 mr-md-4 mr-lg-7
+                  d-flex
+                  mb-4 mb-sm-0
+                "
+                v-for="(n, key) in contact"
+                :key="key"
+              >
+                <img class="mr-3" :src="n.img" :alt="`${key}-icon`" />
                 <span
                   class="size-18"
                   :class="{
@@ -185,14 +192,10 @@
               </div>
             </div>
           </v-col>
-          <v-col cols="3">
-            <p class="size-24 white--text">
-              Subscribe
-            </p>
+          <v-col cols="12" sm="9" md="3">
+            <p class="size-24 white--text">Subscribe</p>
             <input class="mb-3" placeholder="Email" type="text" />
-            <p class="size-14 mb-0 white-2">
-              No spam. Only profit.
-            </p>
+            <p class="size-14 mb-0 white-2">No spam. Only profit.</p>
           </v-col>
         </v-row>
       </v-container>
@@ -201,62 +204,62 @@
 </template>
 <script>
 export default {
-  name: 'Home',
+  name: "Home",
   data() {
     return {
       contact: {
         phone: {
-          content: '(4321)0987-654-320',
-          img: require('@/assets/img/Image_phone.svg'),
+          content: "(4321)0987-654-320",
+          img: require("@/assets/img/Image_phone.svg"),
         },
         email: {
-          content: 'support@hotel.com',
-          img: require('@/assets/img/Image_mail.svg'),
+          content: "support@hotel.com",
+          img: require("@/assets/img/Image_mail.svg"),
         },
         position: {
-          content: '33 Jaja Park Rd, Yellow, USA',
-          img: require('@/assets/img/Image_location.svg'),
+          content: "33 Jaja Park Rd, Yellow, USA",
+          img: require("@/assets/img/Image_location.svg"),
         },
       },
       houseCheck: {
         arrival: {
           year: 2019,
-          month: 'Oct,',
+          month: "Oct,",
           date: 18,
-          day: 'Friday',
+          day: "Friday",
         },
         departure: {
           year: 2019,
-          month: 'Oct,',
+          month: "Oct,",
           date: 19,
-          day: 'Saturday',
+          day: "Saturday",
         },
       },
       people: {
         adults: 2,
         children: 0,
       },
-      menuList: ['About', 'Service', 'Rooms', 'Blog', 'Contact'],
+      menuList: ["About", "Service", "Rooms", "Blog", "Contact"],
       community: [
         {
           img: require(`@/assets/img/Image_FB.svg`),
-          alt: 'icon-FB',
+          alt: "icon-FB",
         },
         {
           img: require(`@/assets/img/image_twitter.svg`),
-          alt: 'icon-twitter',
+          alt: "icon-twitter",
         },
         {
           img: require(`@/assets/img/Image_ig.svg`),
-          alt: 'icon-ig',
+          alt: "icon-ig",
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 <style lang="scss">
-@import '../assets/scss/mixin.scss';
+@import "../assets/scss/mixin.scss";
 .grey-1 {
   color: #333333;
 }
@@ -285,11 +288,19 @@ export default {
   height: 100%;
 }
 .header {
-  background-image: url('../assets/img/image_background.svg');
+  background-image: url("../assets/img/image_background.svg");
   background-size: cover;
   .h-title {
     font-size: 40px;
     font-weight: 400;
+  }
+  .sign-up-btn {
+    width: 170px;
+    height: 48px;
+  }
+  .check-btn {
+    width: 226px;
+    height: 48px;
   }
   .header-body {
     margin-top: 156px;
@@ -306,10 +317,6 @@ export default {
       font-size: 20px;
       font-weight: 300;
     }
-    .sign-up {
-      width: 170px;
-      height: 48px;
-    }
   }
   .header-check-box {
     position: relative;
@@ -319,12 +326,12 @@ export default {
     margin-bottom: 80px;
     .date-time {
       position: relative;
-      img[alt='button_onlyDropDown'] {
+      img[alt="button_onlyDropDown"] {
         position: relative;
         top: 3px;
       }
     }
-    img[alt='button_dropDown'] {
+    img[alt="button_dropDown"] {
       position: absolute;
       left: 50%;
       bottom: -24px;
@@ -339,8 +346,8 @@ export default {
       }
       .people-num {
         position: relative;
-        img[alt='button_minus'],
-        img[alt='button_plus'] {
+        img[alt="button_minus"],
+        img[alt="button_plus"] {
           position: relative;
           top: -24px;
         }
@@ -357,7 +364,7 @@ export default {
     height: 570px;
     overflow: hidden;
     border-radius: 30px;
-    img[alt='image_item'] {
+    img[alt="image_item"] {
       height: auto;
       width: 100%;
     }
@@ -373,7 +380,15 @@ footer {
   padding-top: 95px;
   padding-bottom: 95px;
   background-color: #2c4664;
-  input[placeholder='Email'] {
+  @include dai_vuetify_md {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  @include dai_vuetify_sm {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+  input[placeholder="Email"] {
     background-color: white;
     height: 48px;
     width: 100%;
