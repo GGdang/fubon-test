@@ -1,5 +1,11 @@
 # fubon-test
 
+## Node Version
+14.10.1
+
+## NPM Version
+6.14.11
+
 ## Project setup
 ```
 npm install
